@@ -1,9 +1,5 @@
 def SELECTOR = true
-
-pipeline {
-  agent {
-    kubernetes {
-      yaml """
+def YAML = """
 apiVersion: v1
 kind: Pod
 metadata:
@@ -24,6 +20,11 @@ spec:
     - cat
     tty: true
 """
+
+pipeline {
+  agent {
+    kubernetes {
+      yaml YAML
     }
   }
   stages {
