@@ -8,9 +8,9 @@ apiVersion: v1
 kind: Pod
 metadata:
   labels:
-    build: ${BUILD_NUMBER}
-    job: ${JOB_NAME}
-    branch: ${BRANCH_NAME}
+    build: "${BUILD_NUMBER}"
+    job: "${JOB_NAME}"
+    branch: "${BRANCH_NAME}"
 spec:
   containers:
   - name: maven
